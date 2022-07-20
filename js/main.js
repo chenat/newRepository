@@ -148,16 +148,15 @@ function setMinesNegsCount(board){
     }
 }
 function cellClicked(elCell, i, j){
-    // if(gTime === 0 && gGame.isOn === true && gBoard[i][j].isMine === true ){
-    //     var newMinePos = getMinesPos()
-    //     clearBombs()        
-    //     setBombs(gBoard,newMinePos)
-
-    // }
+    if((gGame.shownCount === 0) && (gGame.isOn === true) && (gBoard[i][j].isMine === true)){
+        initGame()
+        cellClicked(elCell, i, j)
+    }
     if(gTime === 0 && gGame.isOn === true){
         gInterval = setInterval(setTime,10)
     }
     if(gBoard[i][j].isMine && gGame.isOn !== false){
+        
         var elCellId = document.getElementById(`cell-${i}-${j}`)
         elCellId.innerHTML = MINE_IMG
         elCellId.style.alignItems = 'center'
@@ -167,6 +166,7 @@ function cellClicked(elCell, i, j){
     else if(gGame.isOn !== false){
         var elCellId = document.getElementById(`cell-${i}-${j}`)
         var num = gBoard[i][j].minesAroundCount
+        gGame.shownCount++
         elCellId.style.backgroundColor = 'lightGrey'
         if(gBoard[i][j].minesAroundCount !== 0){
             elCellId.innerText = gBoard[i][j].minesAroundCount
@@ -235,5 +235,10 @@ function gameOver(){
     elGameStatus.innerHTML = strHTML
     gGame.isOn = false
     setTimeOff()
+}
+
+function newGame(){
+    setTimeOff()
+    initGame()
 }
 
