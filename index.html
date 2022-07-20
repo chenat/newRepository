@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body onload="initGame()">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>mine-sweeper</title>
+    <div ><button onclick="initGame()" class="new-game">new game</button></div>
+    <h3>choose your difficulty</h3>
+    <div>
+        <button onclick="changeToEasy()" class="upper-buttons">  Easy (16) </button>
+        <button onclick="changeToMedium()" class="upper-buttons"> Medium (64) </button>
+        <button onclick="changeToHard()" class="upper-buttons"> Hard (144) </button>
+    </div>
+    <div class="time">
+        <tr class="time-text">
+            <td>
+                Time from start:<button class="timer">0</button>
+            </td>
+        </tr>
+    </div>
+
+    <div class="nums" id="table"></div>
+    <div class="game-status"></div>
+
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
