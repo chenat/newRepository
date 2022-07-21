@@ -226,7 +226,8 @@ function cellClicked(elCell, i, j){
         gFirstClick = false
     }
 
-    if(gBoard[i][j].isShown === false && gBoard[i][j].minesAroundCount === 0){
+    if(gBoard[i][j].isShown === false && gBoard[i][j].minesAroundCount === 0 &&
+         gBoard[i][j].isMine !== true){
         expandIfZero(i,j)
     }
 
@@ -518,7 +519,10 @@ function expandIfZero(iIndx,jIndx){
                 && gBoard[i][j].isShown !== true){
                 var elCell = document.getElementById(`cell-${i}-${j}`)
                 gBoard[i][j].isShown = true
-                if(gBoard[i][j].minesAroundCount !== 0){
+                if(gBoard[i][j].isMine === true){
+                    console.log('check if the bug is here')
+                }
+                else if(gBoard[i][j].minesAroundCount !== 0){
                     elCell.innerText = gBoard[i][j].minesAroundCount
                     changeTextColor(i,j)
                     elCell.style.backgroundColor = 'lightGrey'
@@ -532,6 +536,7 @@ function expandIfZero(iIndx,jIndx){
                     gTimeOut = setTimeout(furtherExpand(i,j), 500)
                     reFreshScoreAndMines()
                 }
+                
             }
             
         }
