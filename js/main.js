@@ -152,7 +152,7 @@ function setTime(){
         gGame.secsPassed += gTImeDigits 
     }
     var elTimer = document.querySelector('.timer')
-    elTimer.innerHTML = `${(gGame.secsPassed)}sec`
+    elTimer.innerHTML = `${(gGame.secsPassed)} sec`
 }
 
 
