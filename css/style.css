@@ -1,5 +1,81 @@
-.buttons{
-    height: 40px;
-    width: 40px;
+.all-items{
+    margin: 0;
+    background: rgb(100, 93, 118);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10%;
     
+}
+
+html{
+    background-color: rgb(193, 212, 230);
+}
+
+.mat{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(186, 227, 227);
+    align-self: center;
+    border-radius: 15%;
+}
+#smiley{
+    text-align: center;
+}
+
+.level{
+    text-align: center;
+    border-radius: 15%;
+}
+
+.hints{
+    text-align: center;
+}
+#hbtn{
+    background-color: rgb(180, 174, 56);
+}
+.score{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+.mines{
+    text-align: center;
+}
+
+.time{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.game-status{
+    text-align: center;
+}
+
+.level-buttons{
+    text-align: center;
+}
+
+.ng-button{
+    text-align: center;
+    align-items: center;
+    border-radius: 10%;
+}
+#safe{
+    background-color: rgb(90, 124, 113);
+}
+#new-game{
+    background-color: rgb(90, 124, 113);
+}
+.lives{
+    text-align: center;
 }
